@@ -1,7 +1,7 @@
 FROM node:10 AS ui-build
 WORKDIR /usr/src/app
 COPY my-app/ ./my-app/
-RUN cd my-app && npm install && npm run build
+RUN cd my-app && npm install -g npm@8.5.5 && npm run build
 
 FROM node:10 AS server-build
 WORKDIR /root/
